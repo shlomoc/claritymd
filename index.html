@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClarityMD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-teal': '#4DB6AC',
+              'secondary-gray': '#EEEEEE',
+              'accent-purple': '#9575CD',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'], // Example: Using Inter font
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.0",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.1",
+    "rehype-raw": "https://esm.sh/rehype-raw@^7.0.0",
+    "pdfjs-dist": "https://esm.sh/pdfjs-dist@4.10.38",
+    "pdfjs-dist/build/pdf.mjs": "https://esm.sh/pdfjs-dist@4.10.38/build/pdf.mjs",
+    "pdfjs-dist/": "https://esm.sh/pdfjs-dist@4.10.38/"
+  }
+}
+</script>
+<style id="print-styles">
+  @media print {
+    body * {
+      visibility: hidden !important;
+    }
+    #printable-area, #printable-area * {
+      visibility: visible !important;
+    }
+    #printable-area {
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 20px !important; /* Add some padding for the printed content */
+      font-family: 'Times New Roman', Times, serif !important; /* Classic print font */
+      font-size: 12pt !important;
+      color: #000 !important;
+      background-color: #fff !important;
+    }
+    #printable-area h1, #printable-area h2, #printable-area h3, #printable-area h4, #printable-area h5 {
+      color: #000 !important;
+      margin-top: 1.2em !important;
+      margin-bottom: 0.6em !important;
+      page-break-after: avoid !important;
+    }
+    #printable-area h1 { font-size: 24pt !important; }
+    #printable-area h2 { font-size: 18pt !important; }
+    #printable-area h3 { font-size: 14pt !important; }
+    #printable-area p, #printable-area li, #printable-area div {
+      font-size: 12pt !important;
+      line-height: 1.4 !important;
+    }
+    #printable-area ul, #printable-area ol {
+      margin-bottom: 1em !important;
+    }
+    #printable-area a {
+      color: #000 !important;
+      text-decoration: underline !important;
+    }
+    #printable-area a[href]::after {
+      content: " (" attr(href) ")" !important;
+      font-size: 90% !important;
+      color: #333 !important;
+    }
+    #printable-area .no-print-link-url a[href]::after {
+        content: "" !important; /* Avoids printing URL for specific elements if needed */
+    }
+    #printable-area .page-break-before {
+      page-break-before: always !important;
+    }
+    #printable-area .page-break-avoid, #printable-area .glossary-item-print, #printable-area .qa-pair-print {
+      page-break-inside: avoid !important;
+    }
+    #printable-area .print-section {
+        margin-bottom: 20px !important;
+    }
+    #printable-area .print-disclaimer {
+        margin-top: 30px !important;
+        font-size: 10pt !important;
+        border-top: 1px solid #ccc !important;
+        padding-top: 10px !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+  }
+  @page {
+    margin: 1in;
+  }
+</style>
+</head>
+  <body class="bg-secondary-gray">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>

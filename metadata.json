@@ -1,0 +1,6 @@
+{
+  "name": "ClarityMD",
+  "description": "An application to translate complex medical documents into plain language, provide an interactive glossary, and answer user questions about the content.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
