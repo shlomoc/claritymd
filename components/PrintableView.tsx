@@ -25,6 +25,16 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
 }) => {
   const currentDate = formatDate(new Date());
 
+  const getHostname = (uri: string): string => {
+    try {
+      const url = new URL(uri);
+      return url.hostname;
+    } catch (error) {
+      // If URI is not a valid URL, return the original URI
+      return uri;
+    }
+  };
+
   const renderSources = (sources?: Source[]) => {
     if (!sources || sources.length === 0) return null;
     return (
@@ -34,7 +44,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           {sources.map((source, idx) => (
             <li key={`source-${idx}`} className="no-print-link-url">
               <a href={source.uri} target="_blank" rel="noopener noreferrer">
-                {source.title || source.uri}
+                {source.title && source.title.trim() !== "" ? source.title : getHostname(source.uri)}
               </a>
             </li>
           ))}

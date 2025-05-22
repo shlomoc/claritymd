@@ -32,6 +32,16 @@ export const QASession: React.FC<QASessionProps> = ({ qaHistory, onAskQuestion, 
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [qaHistory]);
 
+  const getHostname = (uri: string): string => {
+    try {
+      const url = new URL(uri);
+      return url.hostname;
+    } catch (error) {
+      // If URI is not a valid URL, return the original URI
+      return uri;
+    }
+  };
+
   return (
     <div className="flex flex-col h-[500px]">
       <div className="flex-grow overflow-y-auto p-4 bg-gray-50 rounded-t-lg shadow space-y-4 mb-px">
@@ -65,11 +75,11 @@ export const QASession: React.FC<QASessionProps> = ({ qaHistory, onAskQuestion, 
                           href={source.uri}
                           target="_blank"
                           rel="noopener noreferrer"
-                          title={source.title || source.uri}
+                          title={source.uri}
                           className="text-accent-purple hover:text-purple-700 hover:underline flex items-center transition-colors"
                         >
                           <LinkIcon className="w-3 h-3 mr-1 flex-shrink-0" /> 
-                          <span className="truncate">{source.title && source.title.trim() !== "" ? source.title : source.uri}</span>
+                          <span>{source.title && source.title.trim() !== "" ? source.title : getHostname(source.uri)}</span>
                         </a>
                       </li>
                     ))}

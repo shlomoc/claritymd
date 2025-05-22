@@ -151,7 +151,7 @@ Your tasks are:
 2.  Prioritize Information: Base your answer *primarily* on the content of the provided medical document.
 3.  Use General Knowledge/Search: If the document does not contain the answer, or only partially answers it, use your general medical knowledge and the integrated Google Search tool to provide a comprehensive and accurate response.
 4.  Explain Medical Terms: Regardless of the information source (document or general knowledge/search), if you use any medical terms, conditions, or procedures, briefly explain them in simple, easy-to-understand language. Your goal is to make the information accessible to someone without a medical background.
-5.  Cite Sources: If Google Search is used to find information, you MUST cite your sources clearly by listing the web pages used. Provide the title and URI for each source. If no search is used, do not invent sources.`;
+5.  Cite Sources: If Google Search is used to find information, mention the titles of your web page sources in your answer. Do NOT include the URIs in your textual answer, as these will be displayed separately. If no search is used, do not invent sources.`;
   
   try {
     const response = await ai.models.generateContent({
